@@ -13,13 +13,13 @@ int arraysize = int.Parse(ReadLine()!);
 
 Write("Enter array min Value: ");
 
-double from = Double.Parse(ReadLine()!);
+double ValueFrom = Double.Parse(ReadLine()!);
 
 Write("Enter array max Value: ");
 
-double to = Double.Parse(ReadLine()!);
+double ValueTo = Double.Parse(ReadLine()!);
 
-double[] array = GetArray(arraysize, from, to);
+double[] array = GetArray(arraysize, ValueFrom, ValueTo);
 
 WriteLine();
 PrintArray(array);
@@ -32,7 +32,8 @@ WriteLine();
 double maxArrValue = array.Max();
 double minArrValue = array.Min();
 WriteLine();
-WriteLine($"max values = {Math.Round(maxArrValue, 1)}; min values = {Math.Round(minArrValue, 1)}");
+WriteLine($"max value = {Math.Round(maxArrValue, 1)}; min value = {Math.Round(minArrValue, 1)}");
+WriteLine();
 WriteLine($"Difference between max and min values: {Math.Round(maxArrValue - minArrValue, 1)}");
 WriteLine();
 
@@ -43,10 +44,7 @@ double[] GetArray(int size, double MinValue, double MaxValue)
     Random rnd = new Random();
     for (int i = 0; i < size; i++)
     {
-        resultArray[i] = rnd.NextDouble() * (MaxValue - MinValue) + MinValue;; 
-       // resultArray[i] = rnd.Next(MinValue, MaxValue) + rnd.NextDouble();
-        
-
+        resultArray[i] = rnd.NextDouble() * (MaxValue - MinValue) + MinValue; 
     }
     return resultArray;
 }
