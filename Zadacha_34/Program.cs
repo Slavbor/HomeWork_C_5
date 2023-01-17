@@ -7,7 +7,7 @@ using System;
 using static System.Console;
 Clear();
 
-Write("Введите размер массива: ");
+Write("Enter array size: ");
 
 int arraysize = int.Parse(ReadLine()!);
 
